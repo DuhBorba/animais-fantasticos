@@ -1,6 +1,16 @@
 body, h1, h2, ul, li, p, dd, dt, dl {
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
+}
+
+*, 
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
 }
 
 img {
@@ -184,18 +194,8 @@ body {
   font-weight: bold;
 }
 
-/* @media (max-width: 700px) {
-  body {
-  }
-  .menu, .section, .copy {
-  }
-  .section {
-  }
-  .animais-lista {
-  }
-  .faq-lista, .dados, .mapa {
-  }
-  .grid-section h1 {
+@media (max-width: 700px) {
+  .section h1 {
     font-size: 3rem;
   }
   .menu {
@@ -204,4 +204,25 @@ body {
   .copy {
     margin-bottom: 0px;
   }
-} */
+  .animais-lista{
+    margin-left: unset;
+    min-width: unset;
+    max-width: 100px;
+  }
+  .faq-lista{
+    margin-left: unset;
+  }
+  .mapa{
+    margin-left: unset;
+  }
+  .flex-contato{
+    flex-direction: column;
+  }
+  .mapa{
+    max-width: unset;
+  }
+  .dados{
+    margin-top: 15px;
+    margin-left: unset;
+  }
+}
