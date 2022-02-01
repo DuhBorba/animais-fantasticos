@@ -17,10 +17,11 @@
 
 <body>
   <nav class="menu js-menu">
-    <ul>
+    <button data-menu="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul data-menu="list" id="menu">
       <li><a href="#animais">Animais</a></li>
       <li data-dropdown>
-        <a href="sobre.html">Sobre</a>
+        <a href="sobre.html">Sobre ⮟</a>
         <ul class="dropdown-menu">
           <li><a href="empresa.html">A Empresa</a></li>
           <li><a href="equipe.html">Equipe</a></li>
@@ -30,7 +31,7 @@
       </li>
       <li><a href="#faq">Faq</a></li>
       <li><a href="#contato">Contato</a></li>
-      <li><a data-modal="open" href="login.html">Login →</a></li>
+      <li><a data-modal="open" href="login.html">Login ⮞</a></li>
     </ul>
   </nav>
   <section class="section animais js-scroll" id="animais">
