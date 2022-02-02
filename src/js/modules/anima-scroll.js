@@ -10,7 +10,7 @@ export default function initAnimaScroll(){
 
                 if(sectionTop < windowMetade){
                     section.classList.add('active');
-                } else {
+                } else if(section.classList.contains('active')) {
                     section.classList.remove('active');
                 }
             })
