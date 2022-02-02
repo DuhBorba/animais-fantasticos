@@ -1,6 +1,6 @@
 export default function initTabNav(){
     const tabMenu = document.querySelectorAll('.js-tabmenu li');
-    const tabContent = document.querySelectorAll('.js-tabcontent section');
+    const tabContent = document.querySelectorAll('[data-tab="content"] section');
     tabContent[0].classList.add('active');
     
     if(tabContent.length && tabContent.length){
