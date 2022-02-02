@@ -6,13 +6,13 @@
 }
 
 .numeros-flex h3 {
-  font-family: 'Playfair Display SC';
+  font-family: var(--playfair-font);
   font-size: 2rem;
   margin-bottom: .5rem;
 }
 
 .numeros-flex span {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--ibm-font);
   font-weight: bold;
   font-size: 1.5rem;
   color: #E54;

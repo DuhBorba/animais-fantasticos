@@ -1,7 +1,25 @@
+:root {
+  --ibm-font: 'IBM Plex Mono', monospace;
+  --helvetica-font: Helvetica, Arial;
+  --playfair-font: 'Playfair Display SC', georgia;
+  --body-color: #faf6ed;
+  --theme-color: #FB5;
+  --font-theme-color: #E54;
+  --black-color: #1b1d20;
+}
+
+.dark-document{
+  --body-color: #1b1d20;
+  --theme-color: #ffcb7c;
+  --font-theme-color: #eb6b5d;
+  --black-color: #f4f4f4;
+}
+
 body, h1, h2, ul, li, p, dd, dt, dl {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    transition: .3s;
   }
   
   *, 
@@ -23,13 +41,13 @@ body, h1, h2, ul, li, p, dd, dt, dl {
   }
   
   body {
-    background: #faf6ed;
-    color: #222;
+    background: var(--body-color);
+    color: var(--black-color);
     -webkit-font-smoothing: antialiased;
   }
   
   .menu {
-    background: #FB5;
+    background: var(--theme-color);
     max-width: 1300px;
     margin: 2rem 0 2rem auto;
   }
@@ -44,9 +62,9 @@ body, h1, h2, ul, li, p, dd, dt, dl {
     display: block;
     padding: 10px;
     margin-right: 10px;
-    color: #222;
+    color: #1b1d20;
     text-decoration: none;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--ibm-font);
     font-weight: bold;
     text-transform: uppercase;
     font-size: 0.875rem;
@@ -61,7 +79,7 @@ body, h1, h2, ul, li, p, dd, dt, dl {
   }
   
   .titulo {
-    font-family: 'Playfair Display SC', georgia;
+    font-family: var(--playfair-font);
     font-size: 6rem;
     line-height: 1;
     font-weight: 400;
@@ -69,12 +87,12 @@ body, h1, h2, ul, li, p, dd, dt, dl {
   }
   
   .animais h2 {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--ibm-font);
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: .1em;
     margin-bottom: 1rem;
-    color: #E54;
+    color: var(--font-theme-color);
   }
   
   .animais h2::before {
@@ -83,11 +101,11 @@ body, h1, h2, ul, li, p, dd, dt, dl {
     width: 40px;
     height: 10px;
     margin-right: 10px;
-    background: #FB5;
+    background: var(--theme-color);
   }
   
   .animais p {
-    font-family: Helvetica, Arial;
+    font-family: var(--helvetica-font);
     line-height: 1.2;
     margin-bottom: 1rem;
   }
@@ -113,15 +131,15 @@ body, h1, h2, ul, li, p, dd, dt, dl {
   }
   
   .animais-lista::-webkit-scrollbar-thumb {
-    background: #FB5;
-    border-left: 4px solid #faf6ed;
-    border-right: 4px solid #faf6ed;
+    background: var(--theme-color);
+    border-left: 4px solid var(--body-color);
+    border-right: 4px solid var(--body-color);
   }
   
   .animais-lista::-webkit-scrollbar-track {
-    background: #faf6ed;
+    background: var(--body-color);
   }
-  
+
   .animais-descricao {
     padding-left: 15px;
   }
@@ -153,11 +171,11 @@ body, h1, h2, ul, li, p, dd, dt, dl {
   }
   
   .faq-lista dt {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--ibm-font);
     font-weight: bold;
     margin-top: 2rem;
     margin-bottom: .5rem;
-    color: #E54;
+    color: var(--font-theme-color);
     cursor: pointer;
   }
   
@@ -167,11 +185,11 @@ body, h1, h2, ul, li, p, dd, dt, dl {
     width: 20px;
     height: 10px;
     margin-right: 10px;
-    background: #FB5;
+    background: var(--theme-color);
   }
   
   .faq-lista dd {
-    font-family: Helvetica, Arial;
+    font-family: var(--helvetica-font);
     margin-bottom: .5rem;
     margin-left: 30px;
   }
@@ -224,7 +242,7 @@ body, h1, h2, ul, li, p, dd, dt, dl {
   
   .dados li {
     margin-bottom: 1rem;
-    font-family: Helvetica, Arial;
+    font-family: var(--helvetica-font);
   }
   
   .dados li::before {
@@ -233,19 +251,20 @@ body, h1, h2, ul, li, p, dd, dt, dl {
     width: 20px;
     height: 10px;
     margin-right: 10px;
-    background: #FB5;
+    background: var(--theme-color);
   }
   
   .copy {
-    background: #FB5;
+    background: var(--theme-color);
     max-width: 1300px;
     margin: 2rem 0 2rem auto;
   }
   
   .copy p {
     padding: 20px;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--ibm-font);
     font-weight: bold;
+    color: #1b1d20;
   }
   
   .js [data-anime="scroll"] {
@@ -264,9 +283,9 @@ body, h1, h2, ul, li, p, dd, dt, dl {
     display: inline-block;
     width: 10px;
     height: 10px;
-    border: 2px solid #000;
+    border: 2px solid var(--black-color);
     border-radius: 50%;
-    background: #E54;
+    background: var(--font-theme-color);
     margin-left: 4px;
   }
 
@@ -275,16 +294,44 @@ body, h1, h2, ul, li, p, dd, dt, dl {
     display: inline-block;
     width: 10px;
     height: 10px;
-    border: 2px solid #000;
+    border: 2px solid var(--black-color);
     border-radius: 50%;
     background: #3F4;
     margin-left: 4px;
   }
 
   .invalido{
-    border: 1px solid red;
+    border: 2px solid var(--font-theme-color);
   }
-  
+
+  .btn-dark-light {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--theme-color);
+    box-shadow: -1px 3px 8px -1px rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    border-radius: 50%;
+    z-index: 100;
+    cursor: pointer;
+  }
+   
+  .btn-dark-light svg{
+    width: 28px;
+    fill: transparent;
+    fill: #f4f4f4;
+    stroke: #1b1d20;
+    transition: .3s;
+  }
+
+  .btn-dark-light.dark-mode svg {
+    fill: var(--theme-color);
+  }
+
+  .btn-dark-light.dark-mode {
+    background-color: #f4f4f4;
+  }
+
   @media (max-width: 700px) {
     .section h1 {
       font-size: 3rem;
@@ -316,5 +363,9 @@ body, h1, h2, ul, li, p, dd, dt, dl {
     .dados{
       margin-top: 15px;
       margin-left: unset;
+    }
+    .btn-dark-light{
+      bottom: 20px;
+      right: 10px;
     }
   }

@@ -16,11 +16,11 @@
 }
 
 .modal {
-  background: white;
+  background: var(--body-color);
   min-width: 300px;
   padding: 40px;
-  border: 10px solid #FB5;
-  box-shadow: 0 0 0 10px white;
+  border: 10px solid var(--theme-color);
+  box-shadow: 0 0 0 10px var(--body-color);
   position: relative;
 }
 
@@ -47,20 +47,20 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 4px solid white;
+  border: 4px solid var(--body-color);
   top: -30px;
   right: -30px;
   position: absolute;
-  background: #E54;
+  background: var(--font-theme-color);
   box-shadow: 0 4px 4px 0 rgba(0,0,0,.3);
   font-size: 1.2rem;
-  color: white;
-  font-family: 'IBM Plex Mono', monospace;
+  color: var(--body-color);
+  font-family: var(--ibm-font);
   cursor: pointer;
 }
 
 .modal label {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--ibm-font);
   display: block;
   font-weight: bold;
   margin: 1rem 0 .5rem 0;
@@ -74,13 +74,14 @@
 
 .modal button[type="submit"] {
   display: block;
-  background: #E54;
+  background: var(--font-theme-color);
   border: none;
   border-radius: 4px;
   padding: .7rem 2rem;
   font-size: 1rem;
-  color: white;
-  font-family: 'IBM Plex Mono', monospace;
+  color: var(--body-color);
+  font-family: var(--ibm-font);
   margin-top: 1rem;
   font-weight: bold;
+  cursor: pointer;
 }

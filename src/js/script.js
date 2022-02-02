@@ -9,6 +9,7 @@ import initMenuMobile from "./modules/menu-mobile.js";
 import initAnimaNumbers from "./modules/anima-numbers.js";
 import initFuncionamento from "./modules/funcionamento.js";
 import initValidateForm from "./modules/validate-form.js";
+import initDarkMode from "./modules/dark-mode.js";
 
 initSmoothScroll();
 initTabNav();
@@ -21,3 +22,4 @@ initMenuMobile();
 initAnimaNumbers();
 initFuncionamento();
 initValidateForm();
+initDarkMode();
