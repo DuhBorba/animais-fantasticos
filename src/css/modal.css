@@ -24,6 +24,10 @@
   position: relative;
 }
 
+#login{
+  max-width: 200px;
+}
+
 @keyframes modal {
   from {
     opacity: 0;

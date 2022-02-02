@@ -204,11 +204,13 @@
   <section class="modal-container" data-modal="container">
     <div class="modal">
       <button data-modal="close" class="close">X</button>
-      <form action="">
+      <form action="" id="login">
         <label for="email">Email</label>
-        <input type="text" for="email" id="email">
+        <input type="email" for="email" id="email">
+        <span class="message-error"></span>
         <label for="senha">Senha</label>
-        <input type="password" for="senha" id="senha">
+        <input type="password" for="senha" id="senha" required>
+        <span class="message-error"></span>
         <button type="submit">Entrar</button>
       </form>
     </div>
