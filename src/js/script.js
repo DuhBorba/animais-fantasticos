@@ -11,6 +11,7 @@ import initValidateForm from "./modules/validate-form.js";
 import initDarkMode from "./modules/dark-mode.js";
 import initFetchAnimals from "./modules/fetch-animals.js";
 import initFetchBitcoin from "./modules/fetch-bitcoin.js";
+import initCountdownSeasons from "./modules/countdown-seasons.js";
 
 initSmoothScroll();
 initTabNav();
@@ -25,3 +26,4 @@ initValidateForm();
 initDarkMode();
 initFetchAnimals();
 initFetchBitcoin();
+initCountdownSeasons();
