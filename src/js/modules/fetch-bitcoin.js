@@ -17,7 +17,11 @@ export default function initFetchBitcoin(){
 
     const result = userValue / priceBitcoin;
 
-    btc.value = result;
+    btc.value = result.toFixed(7);
+
+    if(!result){
+      btc.value = 0;
+    }
   }
 
   async function calcBictoinToBrl(event){
@@ -26,7 +30,11 @@ export default function initFetchBitcoin(){
 
     const result = userValue * priceBitcoin;
 
-    brl.value = result;
+    brl.value = result.toFixed(7);
+
+    if(!result){
+      brl.value = 0;
+    }
   }
 
   async function priceUpdate(){
@@ -35,7 +43,7 @@ export default function initFetchBitcoin(){
 
     const result = userValue / priceBitcoin;
 
-    btc.value = result;
+    btc.value = result.toFixed(7);
   }
 
   priceUpdate();

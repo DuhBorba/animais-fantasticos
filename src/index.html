@@ -187,11 +187,27 @@
         <li data-semana="1,2,3,4,5" data-horario="8,18">Seg à Sex das 08h00 às 18h00</li>
         <li>
           Doe Bitcoin para nos ajudar
-          <form action="">
-            <input type="number" id="bitcoin">
-            <span>⇆</span>
-            <input type="number" id="brl" value="100">
-            <button>Doar</button>
+          <form action="" id="doar">
+            <div class="box-conversor">
+              <img src="img/btc.svg" alt="BTC">
+              <div class="text-moeda">
+                <p>BTC</p>
+                <p>Bitcoin</p>
+              </div>
+              <input id="bitcoin">
+            </div>
+            <div class="arrow">
+              <span>⇅</span>
+            </div>
+            <div class="box-conversor">
+              <img src="img/brl.svg" alt="BRL">
+              <div class="text-moeda">
+                <p>BRL</p>
+                <p>Real Brasileiro</p>
+              </div>
+              <input id="brl" value="100">
+            </div>
+            <button type="submit" class="btn-doar">Doar</button>
           </form>
         </li>
       </ul>
