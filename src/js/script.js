@@ -10,6 +10,7 @@ import initFuncionamento from "./modules/funcionamento.js";
 import initValidateForm from "./modules/validate-form.js";
 import initDarkMode from "./modules/dark-mode.js";
 import initFetchAnimals from "./modules/fetch-animals.js";
+import initFetchBitcoin from "./modules/fetch-bitcoin.js";
 
 initSmoothScroll();
 initTabNav();
@@ -23,3 +24,4 @@ initFuncionamento();
 initValidateForm();
 initDarkMode();
 initFetchAnimals();
+initFetchBitcoin();
