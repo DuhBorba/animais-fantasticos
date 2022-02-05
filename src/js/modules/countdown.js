@@ -3,7 +3,7 @@ export default class Countdown{
     this.futureDate = futureDate;
   }
   get _actualDate(){
-    return new Date()
+    return new Date();
   }
   get _futureDate(){
     return new Date(this.futureDate);
@@ -27,7 +27,7 @@ export default class Countdown{
     const days = this.days;
     const hours = this.hours % 24;
     const minuts = this.minuts % 60;
-    const seconds = this.seconds %60;
+    const seconds = this.seconds % 60;
     return {
       days: days,
       hours: hours,
