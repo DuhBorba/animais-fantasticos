@@ -12,7 +12,7 @@ export default function initCountdownSeasons(){
     const endToSummer = new Countdown(`20 March ${currentYear} 00:50:00 GMT-0300`);
     const nextSummer = new Countdown(`21 December ${currentYear} 07:02:00 GMT-0300`);
 
-    resultSeason(startToSummer, endToSummer, nextSummer, 'no Verão.');
+    resultSeason(startToSummer, endToSummer, nextSummer, 'no Verão');
   }
 
   function countdownAutumn(){
@@ -21,7 +21,7 @@ export default function initCountdownSeasons(){
     const endToWinter = new Countdown(`20 Juny ${currentYear} 18:44:00 GMT-0300`);
     const nextWinter = new Countdown(`20 March ${currentYear + 1} 00:50:00 GMT-0300`);
 
-    resultSeason(startToWinter, endToWinter, nextWinter, 'no Outono.');
+    resultSeason(startToWinter, endToWinter, nextWinter, 'no Outono');
   }
 
   function countdownWinter(){
@@ -30,7 +30,7 @@ export default function initCountdownSeasons(){
     const endToWinter = new Countdown(`22 September ${currentYear} 10:31:00 GMT-0300`);
     const nextWinter = new Countdown(`20 Juny ${currentYear + 1} 18:44:00 GMT-0300`);
 
-    resultSeason(startToWinter, endToWinter, nextWinter, 'no Inverno.');
+    resultSeason(startToWinter, endToWinter, nextWinter, 'no Inverno');
   }
 
   function countdownSpring(){
@@ -39,35 +39,39 @@ export default function initCountdownSeasons(){
     const endToSpring = new Countdown(`21 December ${currentYear} 07:02:00 GMT-0300`);
     const nextSpring = new Countdown(`22 September ${currentYear + 1} 10:31:00 GMT-0300`);
 
-    resultSeason(startToSpring, endToSpring, nextSpring, 'no Primavera.');
+    resultSeason(startToSpring, endToSpring, nextSpring, 'no Primavera');
   }
 
-  function createContentSeason(time){
-    divContent += `<br><div class="estacao">
-                      <div>
-                        <span>Dias</span>
-                        <span>${time.total.days}</span>
+  function createContentSeason(time, currentSeason){
+    divContent +=   `<div class="estacao">
+                      <h3>${currentSeason.substr(3)}</h3>
+                      <div class="estacao-content">
+                        <div>
+                          <span>Dias</span>
+                          <span>${time.total.days}</span>
+                        </div>
+                        <div>
+                          <span>Horas</span>
+                          <span>${time.total.hours}</span>
+                        </div>
+                        <div>
+                          <span>Minutos</span>
+                          <span>${time.total.minuts}</span>
+                        </div>
+                        <div>
+                          <span>Segundos</span>
+                          <span>${time.total.seconds}</span>
+                        </div>
                       </div>
-                      <div>
-                        <span>Horas</span>
-                        <span>${time.total.hours}</span>
-                      </div>
-                      <div>
-                        <span>Minutos</span>
-                        <span>${time.total.minuts}</span>
-                      </div>
-                      <div>
-                        <span>Segundos</span>
-                        <span>${time.total.seconds}</span>
-                      </div>
-                    </div><br>`;
+                    </div>`;
 
     divEstacoes.innerHTML = divContent;
   }
 
   function createCurrentSeason(currentSeason){
     divContent += `<div class="estacao">
-                    <div>
+                    <h3>${currentSeason.substr(3)}</h3>
+                    <div class="estacao-content">
                       <p>Estamos ${currentSeason}</p>
                     </div>
                   </div>`;
@@ -77,18 +81,21 @@ export default function initCountdownSeasons(){
 
   function resultSeason(startSeason, endSeason, nextSeason, currentSeason){
     if(startSeason._timeStampDiff > 0){
-      createContentSeason(startSeason);
+      createContentSeason(startSeason, currentSeason);
     } else if(startSeason._timeStampDiff < 0 && endSeason._timeStampDiff > 0){
       createCurrentSeason(currentSeason);
     } else if(endSeason._timeStampDiff < 0 && nextSeason._timeStampDiff > 0){
-      createContentSeason(nextSeason);
+      createContentSeason(nextSeason, currentSeason);
     } else if(nextSeason._timeStampDiff < 0){
       createCurrentSeason(currentSeason);
     }
   }
 
-  countdownSummer();
-  countdownAutumn();
-  countdownWinter();
-  countdownSpring();
+  setInterval(() => {
+    countdownSummer();
+    countdownAutumn();
+    countdownWinter();
+    countdownSpring();
+    divContent = '';
+  }, 1000);
 }

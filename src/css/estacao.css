@@ -1,0 +1,53 @@
+.estacoes-flex{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: 100px;
+  margin-top: 40px;
+}
+
+.estacao{
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - 30px);
+  margin-bottom: 30px;
+  margin-right: 30px;
+}
+
+.estacao h3{
+  font-family: var(--playfair-font);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.estacao-content{
+  display: flex;
+}
+
+.estacao-content div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.estacao-content span:nth-child(1){
+  font-family: var(--ibm-font);
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--color-black);
+}
+
+.estacao-content span:nth-child(2){
+  font-family: var(--ibm-font);
+  font-weight: bold;
+  font-size: 1.75rem;
+  color: #E54;
+}
+
+.estacao-content p{
+  font-family: var(--ibm-font);
+  font-weight: bold;
+  font-size: 1.75rem;
+  color: #E54;
+}
