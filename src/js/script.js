@@ -1,4 +1,4 @@
-import initSmoothScroll from "./modules/smooth-scroll.js";
+import SmoothScroll from "./modules/smooth-scroll.js";
 import initTabNav from "./modules/tab-nav.js";
 import initAccordion from "./modules/accordion.js";
 import initAnimaScroll from "./modules/anima-scroll.js";
@@ -13,7 +13,9 @@ import initFetchAnimals from "./modules/fetch-animals.js";
 import initFetchBitcoin from "./modules/fetch-bitcoin.js";
 import initCountdownSeasons from "./modules/countdown-seasons.js";
 
-initSmoothScroll();
+const smoothScroll = new SmoothScroll('[data-menu="smooth"] a[href^="#"]');
+smoothScroll.init();
+
 initTabNav();
 initAccordion();
 initAnimaScroll();
