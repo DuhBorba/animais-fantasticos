@@ -1,4 +1,4 @@
-import initAnimaNumbers from "./anima-numbers.js";
+import AnimaNumbers from "./anima-numbers.js";
 
 export default function initFetchAnimals(){
   const divNumeros = document.querySelector('.numeros-flex');
@@ -11,7 +11,8 @@ export default function initFetchAnimals(){
       createAnimal(animal);
     });
 
-    initAnimaNumbers();
+    const animaNumbers = new AnimaNumbers('[data-numero]','.numeros', 'active');
+    animaNumbers.init();
   }
 
   function createAnimal(animal){
