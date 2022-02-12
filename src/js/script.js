@@ -10,7 +10,7 @@ import initFuncionamento from "./modules/funcionamento.js";
 import initValidateForm from "./modules/validate-form.js";
 import initDarkMode from "./modules/dark-mode.js";
 import fetchAnimals from "./modules/fetch-animals.js";
-import initFetchBitcoin from "./modules/fetch-bitcoin.js";
+import fetchBitcoin from "./modules/fetch-bitcoin.js";
 import initCountdownSeasons from "./modules/countdown-seasons.js";
 
 const smoothScroll = new SmoothScroll('[data-menu="smooth"] a[href^="#"]');
@@ -34,7 +34,7 @@ initMenuMobile();
 initFuncionamento();
 initValidateForm();
 initDarkMode();
-initFetchBitcoin();
 initCountdownSeasons();
 
 fetchAnimals('animalsapi.json', '.numeros-flex');
+fetchBitcoin('https://blockchain.info/ticker', '#bitcoin', '#brl');

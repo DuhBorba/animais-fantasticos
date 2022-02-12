@@ -1,9 +1,9 @@
-export default function initFetchBitcoin(){
-  const btc = document.querySelector('#bitcoin');
-  const brl = document.querySelector('#brl');
+export default function fetchBitcoin(url, divBtc, divBrl){
+  const btc = document.querySelector(divBtc);
+  const brl = document.querySelector(divBrl);
   const eventos = ['keyup', 'change'];
 
-  async function fetchBitcoin(url){
+  async function getBitcoin(){
     const bitcoinJSON = await (await fetch(url)).json();
 
     const priceBitcoin = (bitcoinJSON.BRL.sell).toFixed(10);
@@ -12,7 +12,7 @@ export default function initFetchBitcoin(){
   }
   
   async function calcBrlToBitcoin(event){
-    const priceBitcoin = await fetchBitcoin('https://blockchain.info/ticker');
+    const priceBitcoin = await getBitcoin();
     const userValue = event.target.value;
 
     const result = userValue / priceBitcoin;
@@ -25,7 +25,7 @@ export default function initFetchBitcoin(){
   }
 
   async function calcBictoinToBrl(event){
-    const priceBitcoin = await fetchBitcoin('https://blockchain.info/ticker');
+    const priceBitcoin = await getBitcoin();
     const userValue = event.target.value;
 
     const result = userValue * priceBitcoin;
@@ -38,7 +38,7 @@ export default function initFetchBitcoin(){
   }
 
   async function priceUpdate(){
-    const priceBitcoin = await fetchBitcoin('https://blockchain.info/ticker');
+    const priceBitcoin = await getBitcoin();
     const userValue = brl.value;
 
     const result = userValue / priceBitcoin;
