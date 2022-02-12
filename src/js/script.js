@@ -9,7 +9,7 @@ import initMenuMobile from "./modules/menu-mobile.js";
 import initFuncionamento from "./modules/funcionamento.js";
 import initValidateForm from "./modules/validate-form.js";
 import initDarkMode from "./modules/dark-mode.js";
-import initFetchAnimals from "./modules/fetch-animals.js";
+import fetchAnimals from "./modules/fetch-animals.js";
 import initFetchBitcoin from "./modules/fetch-bitcoin.js";
 import initCountdownSeasons from "./modules/countdown-seasons.js";
 
@@ -34,6 +34,7 @@ initMenuMobile();
 initFuncionamento();
 initValidateForm();
 initDarkMode();
-initFetchAnimals();
 initFetchBitcoin();
 initCountdownSeasons();
+
+fetchAnimals('animalsapi.json', '.numeros-flex');

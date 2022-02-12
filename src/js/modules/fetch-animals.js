@@ -1,28 +1,30 @@
 import AnimaNumbers from "./anima-numbers.js";
 
-export default function initFetchAnimals(){
-  const divNumeros = document.querySelector('.numeros-flex');
+export default function fetchAnimals(url, target){
+  const divNumeros = document.querySelector(target);
   let divContent = '';
 
-  async function fetchAnimals(url){
+  async function getAnimals(){
     const animalsJSON = await (await fetch(url)).json();
 
-    animalsJSON.forEach((animal) => {
-      createAnimal(animal);
-    });
+    animalsJSON.forEach(animal => createAnimal(animal));
 
+    animaAnimalsNumero();
+  }
+  
+  function createAnimal(animal){
+    divContent += `<div class="numero-animal">
+    <h3>${animal.specie}</h3>
+    <span data-numero>${animal.total}</span>
+    </div>`;
+    
+    divNumeros.innerHTML = divContent;
+  }
+  
+  function animaAnimalsNumero(){
     const animaNumbers = new AnimaNumbers('[data-numero]','.numeros', 'active');
     animaNumbers.init();
   }
 
-  function createAnimal(animal){
-    divContent += `<div class="numero-animal">
-                      <h3>${animal.specie}</h3>
-                      <span data-numero>${animal.total}</span>
-                    </div>`;
-
-    divNumeros.innerHTML = divContent;
-  }
-
-  fetchAnimals('animalsapi.json');
+  return getAnimals();
 }
