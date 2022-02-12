@@ -1,23 +1,37 @@
-export default function initAnimaScroll(){
-    const sections = document.querySelectorAll('[data-anime="scroll"]');
+export default class AnimaScroll{
+    constructor(sections){
+        this.sections = document.querySelectorAll(sections);
+        this.windowMetade = window.innerHeight * 0.7;
 
-    if(sections.length){
-        const windowMetade = window.innerHeight * 0.7;
-
-        function animaScroll(){
-            sections.forEach((section) => {
-                const sectionTop = section.getBoundingClientRect().top;
-
-                if(sectionTop < windowMetade){
-                    section.classList.add('active');
-                } else if(section.classList.contains('active')) {
-                    section.classList.remove('active');
-                }
-            })
+        this.checkDistance = this.checkDistance.bind(this);
+    }
+    getDistance(){
+        this.distance = [...this.sections].map((section) => {
+            const offset = section.offsetTop;
+            return {
+                element: section,
+                offset: Math.floor(offset - this.windowMetade),
+            }
+        })
+    }
+    checkDistance(){
+        this.distance.forEach((item) => {
+            if(window.pageYOffset > item.offset){
+                item.element.classList.add('active');
+            } else if(item.element.classList.contains('active')) {
+                item.element.classList.remove('active');
+            }
+        })
+    }
+    init(){
+        if(this.sections.length){
+            this.getDistance();
+            this.checkDistance();
+            window.addEventListener('scroll', this.checkDistance);
         }
-
-        animaScroll();
-
-        window.addEventListener('scroll', animaScroll);
+        return this;
+    }
+    stop(){
+        window.removeEventListener('scroll', this.checkDistance);
     }
 }
