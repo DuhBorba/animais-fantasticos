@@ -5,7 +5,7 @@ import Modal from "./modules/modal.js";
 import Tooltip from "./modules/tooltip.js";
 import AnimaScroll from "./modules/anima-scroll.js";
 import DropdownMenu from "./modules/dropdown-menu.js";
-import initMenuMobile from "./modules/menu-mobile.js";
+import MenuMobile from "./modules/menu-mobile.js";
 import initFuncionamento from "./modules/funcionamento.js";
 import initValidateForm from "./modules/validate-form.js";
 import initDarkMode from "./modules/dark-mode.js";
@@ -34,7 +34,9 @@ animaScroll.init();
 const dropdownMenu = new DropdownMenu('[data-dropdown]');
 dropdownMenu.init();
 
-initMenuMobile();
+const menuMobile = new MenuMobile('[data-menu="button"', '[data-menu="list"');
+menuMobile.init();
+
 initFuncionamento();
 initValidateForm();
 initDarkMode();
