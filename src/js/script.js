@@ -6,7 +6,7 @@ import Tooltip from "./modules/tooltip.js";
 import AnimaScroll from "./modules/anima-scroll.js";
 import DropdownMenu from "./modules/dropdown-menu.js";
 import MenuMobile from "./modules/menu-mobile.js";
-import initFuncionamento from "./modules/funcionamento.js";
+import Funcionamento from "./modules/funcionamento.js";
 import initValidateForm from "./modules/validate-form.js";
 import initDarkMode from "./modules/dark-mode.js";
 import fetchAnimals from "./modules/fetch-animals.js";
@@ -37,7 +37,9 @@ dropdownMenu.init();
 const menuMobile = new MenuMobile('[data-menu="button"', '[data-menu="list"');
 menuMobile.init();
 
-initFuncionamento();
+const funcionamento = new Funcionamento('[data-semana]', 'aberto');
+funcionamento.init();
+
 initValidateForm();
 initDarkMode();
 initCountdownSeasons();
