@@ -1,6 +1,7 @@
 import ValidateCpf from "./validate-cpf.js";
 
-export default function initValidateForm(){
+export default function validateForm(){
   const cpf = document.querySelector('#cpf');
-  const validateCpf = new ValidateCpf(cpf).init();
+  const validateCpf = new ValidateCpf(cpf);
+  validateCpf.init();
 }

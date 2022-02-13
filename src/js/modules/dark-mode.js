@@ -33,5 +33,6 @@ export default class DarkMode{
   init(){
     this.setValuesStorage();
     this.addDarkLightEvent();
+    return this;
   }
 }

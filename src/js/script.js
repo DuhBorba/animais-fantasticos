@@ -7,7 +7,7 @@ import AnimaScroll from "./modules/anima-scroll.js";
 import DropdownMenu from "./modules/dropdown-menu.js";
 import MenuMobile from "./modules/menu-mobile.js";
 import Funcionamento from "./modules/funcionamento.js";
-import initValidateForm from "./modules/validate-form.js";
+import validateForm from "./modules/validate-form.js";
 import DarkMode from "./modules/dark-mode.js";
 import fetchAnimals from "./modules/fetch-animals.js";
 import fetchBitcoin from "./modules/fetch-bitcoin.js";
@@ -43,8 +43,9 @@ funcionamento.init();
 const darkMode = new DarkMode('.btn-dark-light');
 darkMode.init();
 
-initValidateForm();
 initCountdownSeasons();
+
+validateForm();
 
 fetchAnimals('animalsapi.json', '.numeros-flex');
 fetchBitcoin('https://blockchain.info/ticker', '#bitcoin', '#brl');
