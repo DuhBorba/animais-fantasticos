@@ -46,7 +46,7 @@ darkMode.init();
 const countdownSeasons = new CountdownSeasons('.estacoes-flex');
 countdownSeasons.init();
 
-validateForm();
+validateForm('#cpf');
 
 fetchAnimals('animalsapi.json', '.numeros-flex');
 fetchBitcoin('https://blockchain.info/ticker', '#bitcoin', '#brl');
