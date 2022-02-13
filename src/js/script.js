@@ -8,7 +8,7 @@ import DropdownMenu from "./modules/dropdown-menu.js";
 import MenuMobile from "./modules/menu-mobile.js";
 import Funcionamento from "./modules/funcionamento.js";
 import initValidateForm from "./modules/validate-form.js";
-import initDarkMode from "./modules/dark-mode.js";
+import DarkMode from "./modules/dark-mode.js";
 import fetchAnimals from "./modules/fetch-animals.js";
 import fetchBitcoin from "./modules/fetch-bitcoin.js";
 import initCountdownSeasons from "./modules/countdown-seasons.js";
@@ -40,8 +40,10 @@ menuMobile.init();
 const funcionamento = new Funcionamento('[data-semana]', 'aberto');
 funcionamento.init();
 
+const darkMode = new DarkMode('.btn-dark-light');
+darkMode.init();
+
 initValidateForm();
-initDarkMode();
 initCountdownSeasons();
 
 fetchAnimals('animalsapi.json', '.numeros-flex');
