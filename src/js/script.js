@@ -7,9 +7,10 @@ import AnimaScroll from "./modules/anima-scroll.js";
 import DropdownMenu from "./modules/dropdown-menu.js";
 import MenuMobile from "./modules/menu-mobile.js";
 import Funcionamento from "./modules/funcionamento.js";
-import validateForm from "./modules/validate-form.js";
 import DarkMode from "./modules/dark-mode.js";
 import CountdownSeasons from "./modules/countdown-seasons.js";
+import Slide from "./modules/slide.js";
+import validateForm from "./modules/validate-form.js";
 import fetchAnimals from "./modules/fetch-animals.js";
 import fetchBitcoin from "./modules/fetch-bitcoin.js";
 
@@ -19,34 +20,44 @@ smoothScroll.init();
 const accordion = new Accordion('[data-anime="accordion"] dt');
 accordion.init();
 
-const tabNav = new TabNav('[data-tab="menu"] li', '[data-tab="content"] section');
+const tabNav = new TabNav(
+  '[data-tab="menu"] li',
+  '[data-tab="content"] section'
+);
 tabNav.init();
 
-const modal = new Modal('[data-modal="open"]', '[data-modal="close"]', '[data-modal="container"]');
+const modal = new Modal(
+  '[data-modal="open"]',
+  '[data-modal="close"]',
+  '[data-modal="container"]'
+);
 modal.init();
 
-const tooltip = new Tooltip('[data-tooltip]');
+const tooltip = new Tooltip("[data-tooltip]");
 tooltip.init();
 
 const animaScroll = new AnimaScroll('[data-anime="scroll"]');
 animaScroll.init();
 
-const dropdownMenu = new DropdownMenu('[data-dropdown]');
+const dropdownMenu = new DropdownMenu("[data-dropdown]");
 dropdownMenu.init();
 
 const menuMobile = new MenuMobile('[data-menu="button"', '[data-menu="list"');
 menuMobile.init();
 
-const funcionamento = new Funcionamento('[data-semana]', 'aberto');
+const funcionamento = new Funcionamento("[data-semana]", "aberto");
 funcionamento.init();
 
-const darkMode = new DarkMode('.btn-dark-light');
+const darkMode = new DarkMode(".btn-dark-light");
 darkMode.init();
 
-const countdownSeasons = new CountdownSeasons('.estacoes-flex');
+const countdownSeasons = new CountdownSeasons(".estacoes-flex");
 countdownSeasons.init();
 
-validateForm('#cpf');
+const slide = new Slide(".slide-wrapper", ".slide");
+slide.init();
 
-fetchAnimals('animalsapi.json', '.numeros-flex');
-fetchBitcoin('https://blockchain.info/ticker', '#bitcoin', '#brl');
+validateForm("#cpf");
+
+fetchAnimals("animalsapi.json", ".numeros-flex");
+fetchBitcoin("https://blockchain.info/ticker", "#bitcoin", "#brl");
