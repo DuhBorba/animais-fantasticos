@@ -9,9 +9,9 @@ import MenuMobile from "./modules/menu-mobile.js";
 import Funcionamento from "./modules/funcionamento.js";
 import validateForm from "./modules/validate-form.js";
 import DarkMode from "./modules/dark-mode.js";
+import CountdownSeasons from "./modules/countdown-seasons.js";
 import fetchAnimals from "./modules/fetch-animals.js";
 import fetchBitcoin from "./modules/fetch-bitcoin.js";
-import initCountdownSeasons from "./modules/countdown-seasons.js";
 
 const smoothScroll = new SmoothScroll('[data-menu="smooth"] a[href^="#"]');
 smoothScroll.init();
@@ -43,7 +43,8 @@ funcionamento.init();
 const darkMode = new DarkMode('.btn-dark-light');
 darkMode.init();
 
-initCountdownSeasons();
+const countdownSeasons = new CountdownSeasons('.estacoes-flex');
+countdownSeasons.init();
 
 validateForm();
 
