@@ -6,9 +6,23 @@
   display: flex;
 }
 
+.slide:hover{
+  will-change: transform;
+}
+
 .slide li {
   flex-shrink: 0;
   width: 80vw;
   max-width: 800px;
   margin: 0 20px;
+  border-radius: 4px;
+  overflow: hidden;
+  opacity: .8;
+  transform: scale(.8);
+  transition: .3s;
+}
+
+.slide li.active{
+  opacity: 1;
+  transform: scale(1);
 }
