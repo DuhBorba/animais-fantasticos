@@ -9,7 +9,7 @@ import MenuMobile from "./modules/menu-mobile.js";
 import Funcionamento from "./modules/funcionamento.js";
 import DarkMode from "./modules/dark-mode.js";
 import CountdownSeasons from "./modules/countdown-seasons.js";
-import {SlideNav} from "./modules/slide.js";
+import SlideNav from "./modules/slide.js";
 import validateForm from "./modules/validate-form.js";
 import fetchAnimals from "./modules/fetch-animals.js";
 import fetchBitcoin from "./modules/fetch-bitcoin.js";
@@ -56,8 +56,8 @@ countdownSeasons.init();
 
 const slide = new SlideNav(".slide-wrapper", ".slide");
 slide.init();
-slide.addArrow('.prev', '.next');
-slide.addControl();
+slide.addArrow(".prev", ".next");
+slide.addControl(".custom-control");
 
 validateForm("#cpf");
 

@@ -6,7 +6,7 @@
   display: flex;
 }
 
-.slide:hover{
+.slide:hover {
   will-change: transform;
 }
 
@@ -17,23 +17,23 @@
   margin: 0 20px;
   border-radius: 4px;
   overflow: hidden;
-  opacity: .8;
-  transform: scale(.8);
-  transition: .3s;
+  opacity: 0.8;
+  transform: scale(0.8);
+  transition: 0.3s;
 }
 
-.slide li.active{
+.slide li.active {
   opacity: 1;
   transform: scale(1);
 }
 
-[data-control="slide"]{
+[data-control="slide"] {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
 
-[data-control="slide"] li a{
+[data-control="slide"] li a {
   display: block;
   width: 12px;
   height: 12px;
@@ -44,6 +44,66 @@
   text-indent: -999px;
 }
 
-[data-control="slide"] li.active a, [data-control="slide"] li a:hover{
+[data-control="slide"] li.active a,
+[data-control="slide"] li a:hover {
   background: var(--font-theme-color);
+}
+
+.custom-control {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.custom-control li {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 2px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+  opacity: 0.8;
+  transform: scale(0.8);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.custom-control li.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.arrow-nav {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.arrow-nav button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: var(--font-theme-color);
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.arrow-nav button:hover {
+  opacity: 1;
+}
+
+.arrow-nav button svg {
+  fill: var(--body-color);
+  stroke: var(--body-color);
+}
+
+.arrow-nav button.prev {
+  transform: rotate(-180deg);
 }
