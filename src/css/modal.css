@@ -1,7 +1,7 @@
 .modal-container {
   height: 100vh;
   width: 100%;
-  background: rgba(0,0,0,.5);
+  background: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
   left: 0;
@@ -17,15 +17,12 @@
 
 .modal {
   background: var(--body-color);
-  min-width: 300px;
+  width: 85vw;
+  max-width: 400px;
   padding: 40px;
   border: 10px solid var(--theme-color);
   box-shadow: 0 0 0 10px var(--body-color);
   position: relative;
-}
-
-#login{
-  max-width: 200px;
 }
 
 @keyframes modal {
@@ -40,7 +37,7 @@
 }
 
 .active .modal {
-  animation: modal .3s forwards;
+  animation: modal 0.3s forwards;
 }
 
 .close {
@@ -51,11 +48,9 @@
   top: -30px;
   right: -30px;
   position: absolute;
-  background: var(--font-theme-color);
-  box-shadow: 0 4px 4px 0 rgba(0,0,0,.3);
-  font-size: 1.2rem;
+  background: var(--font-theme-color) url("../img/close.svg") no-repeat center;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
   color: var(--body-color);
-  font-family: var(--ibm-font);
   cursor: pointer;
 }
 
@@ -63,13 +58,15 @@
   font-family: var(--ibm-font);
   display: block;
   font-weight: bold;
-  margin: 1rem 0 .5rem 0;
+  margin: 1rem 0 0.5rem 0;
 }
 
 .modal input {
   width: 100%;
-  padding: .7rem .5rem;
+  padding: 0.7rem 0.5rem;
   box-sizing: border-box;
+  border: 1px solid var(--theme-color);
+  border-radius: 3px;
 }
 
 .modal button[type="submit"] {
@@ -77,7 +74,7 @@
   background: var(--font-theme-color);
   border: none;
   border-radius: 4px;
-  padding: .7rem 2rem;
+  padding: 0.7rem 2rem;
   font-size: 1rem;
   color: var(--body-color);
   font-family: var(--ibm-font);
