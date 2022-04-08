@@ -11,7 +11,7 @@ export default class Funcionamento{
   dadosAgora(){
     this.dataAgora = new Date();
     this.diaAgora = this.dataAgora.getDay();
-    this.horarioAgora = this.dataAgora.getUTCHours();
+    this.horarioAgora = this.dataAgora.getUTCHours()-3;
   }
   
   estaAberto(){
