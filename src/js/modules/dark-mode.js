@@ -1,36 +1,37 @@
-export default class DarkMode{
-  constructor(btn, events){
+export default class DarkMode {
+  constructor(btn, events) {
     this.btn = document.querySelector(btn);
 
-    if(events === undefined){
-      this.events = ['touchstart', 'click'];
+    if (events === undefined) {
+      this.events = ["touchstart", "click"];
     } else {
       this.events = events;
     }
 
     this.changeDarkLight = this.changeDarkLight.bind(this);
   }
-  setValuesStorage(){
-    if(localStorage['theme']){
-      document.body.classList.add(localStorage['theme']);
+  setValuesStorage() {
+    if (localStorage["theme"]) {
+      document.body.classList.add(localStorage["theme"]);
     }
   }
-  changeDarkLight(){
-    document.body.classList.toggle('dark-document');
-    this.btn.classList.toggle('dark-mode');
+  changeDarkLight(event) {
+    event.preventDefault();
+    document.body.classList.toggle("dark-document");
+    this.btn.classList.toggle("dark-mode");
 
-    if(document.body.classList.value == 'dark-document'){
-      localStorage['theme'] = 'dark-document';
+    if (document.body.classList.value == "dark-document") {
+      localStorage["theme"] = "dark-document";
     } else {
-      localStorage.removeItem('theme');
+      localStorage.removeItem("theme");
     }
   }
-  addDarkLightEvent(){
+  addDarkLightEvent() {
     this.events.forEach((evento) => {
       this.btn.addEventListener(evento, this.changeDarkLight);
     });
   }
-  init(){
+  init() {
     this.setValuesStorage();
     this.addDarkLightEvent();
     return this;

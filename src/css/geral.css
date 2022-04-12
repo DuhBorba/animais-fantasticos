@@ -391,6 +391,8 @@ body {
   position: fixed;
   bottom: 30px;
   right: 30px;
+  height: 44px;
+  width: 44px;
   background-color: var(--theme-color);
   box-shadow: -1px 3px 8px -1px rgba(0, 0, 0, 0.2);
   padding: 8px;
