@@ -29,6 +29,7 @@ Para o desenvolvimento foi necessário:
 * HTML
 * CSS
 * JavaScript
+* [Blockchain.info API](https://blockchain.info/ticker)
 * [Prettier](https://prettier.io/) - Formatador de código
 
 ## Resultado
