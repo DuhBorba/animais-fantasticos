@@ -34,10 +34,10 @@ Para o desenvolvimento foi necessário:
 ## Resultado
 
 ### Desktop
-![GIF do POST](https://github.com/DuhBorba/animais-fantasticos/blob/main/desktop.gif)
+![GIF Desktop](https://github.com/DuhBorba/animais-fantasticos/blob/main/desktop.gif)
 
 ### Mobile
-![GIF do PUT](https://github.com/DuhBorba/animais-fantasticos/blob/main/mobile.gif)
+![GIF Mobile](https://github.com/DuhBorba/animais-fantasticos/blob/main/mobile.gif)
 
 ## Autores
 
